@@ -1,0 +1,180 @@
+/* General background and centering */
+body {
+    background: #f8f9fb;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+#submission {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.submission-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+    padding: 32px 32px 24px 32px;
+}
+
+.submission-title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.submission-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 24px;
+}
+
+.submission-tabs {
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 24px;
+    background: #f3f6fa;
+    border: 1px solid #e5e7eb;
+}
+
+.submission-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 0;
+    font-weight: 500;
+    color: #888;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+
+.submission-tab.active {
+    background: #fff;
+    color: #222;
+    border-bottom: 2px solid #1a2330;
+}
+
+.submission-guidelines,
+.submission-form {
+    margin-top: 24px;
+}
+
+.submission-guidelines {
+    background: #f3f8ff;
+    border-radius: 6px;
+    padding: 18px 20px;
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 24px;
+    border: 1px solid #e5e7eb;
+}
+
+.submission-guidelines ul,
+.submission-guidelines ol {
+    margin-left: 18px;
+    margin-bottom: 0;
+}
+
+.submission-guidelines li {
+    margin-bottom: 8px;
+}
+
+.submission-guidelines .fa-check-circle {
+    color: #22c55e;
+    margin-right: 6px;
+}
+
+.submission-form .form-group {
+    margin-bottom: 18px;
+}
+
+.submission-form input[type="text"],
+.submission-form input[type="email"],
+.submission-form input[type="file"],
+.submission-form select,
+.submission-form textarea {
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    background: #f8fafc;
+    font-size: 1rem;
+    padding: 10px 12px;
+    width: 100%;
+    transition: border 0.2s;
+}
+
+.submission-form input[type="text"]:focus,
+.submission-form input[type="email"]:focus,
+.submission-form select:focus,
+.submission-form textarea:focus {
+    border-color: #1a2330;
+    outline: none;
+    background: #fff;
+}
+
+.submission-form textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.submission-form .btn-primary {
+    background: #1a2330;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 10px 0;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.submission-form .btn-primary:hover {
+    background: #2d3748;
+}
+
+.submission-form .text-muted {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.submission-form label {
+    font-weight: 500;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.submission-form .radio-group {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 10px;
+}
+
+.submission-form .radio-group label {
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.submission-form input[type="radio"] {
+    margin-right: 6px;
+}
+
+.submission-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.submission-footer .btn {
+    min-width: 140px;
+}
+
+@media (max-width: 800px) {
+    .submission-container {
+        padding: 18px 6px 18px 6px;
+        max-width: 98vw;
+    }
+}
