@@ -17,9 +17,179 @@
     <link href="css/style.css" rel="stylesheet" />
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet" type="text/css" />
-    <style>
 
+    <style>
+        .vtimeline-split {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            align-items: flex-start;
+            margin: 0 auto;
+            max-width: 1100px;
+            max-height: fit-content;
+            padding: 10px 0;
+        }
+
+        .vtimeline-col {
+            flex: 1 1 0;
+            min-width: 260px;
+            max-width: 480px;
+        }
+
+        .vtimeline-col .vtimeline-item:first-child {
+            margin-top: 0;
+        }
+
+        .vtimeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vtimeline-dot {
+            width: 13px;
+            height: 13px;
+            background: #b0bec5;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px #e0e4ea;
+            margin-right: 16px;
+            margin-left: 12px;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+
+        .vtimeline-date {
+            min-width: 60px;
+            color: #607d8b;
+            font-size: 0.98em;
+            font-weight: 600;
+            text-align: right;
+            margin-right: 16px;
+            margin-top: 2px;
+            line-height: 1.2;
+        }
+
+        .vtimeline-date span {
+            display: block;
+            font-size: 0.93em;
+            color: #b0bec5;
+            font-weight: 400;
+        }
+
+        .vtimeline-content {
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 6px 0 6px 0;
+            flex: 1;
+            color: #263238;
+            position: relative;
+            border-left: 2px solid #e0e4ea;
+        }
+
+        .vtimeline-content h4 {
+            margin: 0 0 2px 0;
+            font-size: 1.08em;
+            font-weight: 700;
+            color: #263238;
+        }
+
+        .vtimeline-desc {
+            color: #607d8b;
+            font-size: 0.97em;
+            margin-top: 2px;
+        }
+
+        .vtimeline-sessions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .vtimeline-sessions span {
+            background: #f1f3f6;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 0.96em;
+            color: #37474f;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .timeline-rooms {
+            background: #f5f7fa;
+            border-radius: 10px;
+            padding: 16px 18px;
+            color: #07212e;
+            box-shadow: 0 2px 8px rgba(136, 136, 136, 0.04);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline-rooms h4 {
+            margin-top: 0;
+            color: #444;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .timeline-rooms ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-rooms li {
+            margin-bottom: 6px;
+            font-size: 1.05em;
+        }
+
+        @media (max-width: 800px) {
+            .vtimeline-split {
+                flex-direction: column;
+                gap: 0;
+                max-width: 98vw;
+            }
+
+            .vtimeline-col {
+                max-width: 90vw;
+                min-width: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .vtimeline-split {
+                padding-left: 0;
+            }
+
+            .vtimeline-dot {
+                margin-left: 4px;
+                margin-right: 8px;
+            }
+
+            .vtimeline-date {
+                min-width: 44px;
+                font-size: 0.95em;
+                margin-right: 7px;
+            }
+
+            .vtimeline-content {
+                padding: 6px 0 6px 0;
+                font-size: 0.95em;
+            }
+
+            .vtimeline-sessions {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
     </style>
+
 </head>
 
 <body data-offset="50" data-spy="scroll" data-target=".navbar-collapse">
@@ -48,6 +218,7 @@
                     <li><a class="smoothScroll" href="#overview">Call For Papers</a></li>
                     <li><a class="smoothScroll" href="#speakers">Committees</a></li>
                     <li><a class="smoothScroll" href="#program">Speakers</a></li>
+                    <li><a class="smoothScroll" href="#program-timeline">Program</a></li>
                     <li><a class="smoothScroll" href="#register">Submission</a></li>
                     <li><a class="smoothScroll" href="#registration">Registration</a></li>
                     <li><a class="smoothScroll" href="#venue">Venue</a></li>
@@ -220,7 +391,7 @@
         </div>
     </section>
     <!-- =========================
-        PROGRAM SECTION   
+        SPEAKERS SECTION   
     ============================== -->
     <section class="parallax-section" id="program">
         <div class="container">
@@ -243,7 +414,7 @@
                             <!-- program speaker here -->
                             <div class="col-md-2 col-sm-2">
                                 <img alt="program" class="img-responsive" src="images/drK.H2.jpg"
-                                    style="max-width:150px; max-height:240px;" />
+                                    style="max-width:127px; max-height:145px; width: 125px; height: 145px;" />
                             </div>
                             <div class="col-md-10 col-sm-10">
                                 <h6><span>09.00 AM</span> <span> east campus 1</span></h6>
@@ -324,6 +495,156 @@
             </div>
         </div>
     </section>
+
+
+
+
+    <!-- =========================
+       BLANK  SECTION   
+    ============================== -->
+    <section class="parallax-section" id="register">
+        <div class="container"
+            style="display: flex; flex-wrap: wrap; align-items: stretch; justify-content: center; gap: 36px;">
+
+        </div>
+    </section>
+
+
+    <!-- PROGRAMMM -->
+
+    <section class="parallax-section" id="program-timeline" style="background: #f7f9fb;">
+        <div class="container">
+            <div class="section-title" style="text-align:center;">
+                <h3>Provisional Program</h3>
+                <p>The final detailed version will be released on
+                    <b>10 October 2025</b>.</p>
+            </div>
+            <div class="vtimeline-split">
+                <div class="vtimeline-col">
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">08:00<br><span>08:30</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Registration</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">08:30<br><span>08:45</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Welcome remarks</h4>
+                            <div class="vtimeline-desc">Head of School, School of Mechanical, Industrial and
+                                Aeronautical Engineering</div>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">08:45<br><span>09:00</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Opening Remarks</h4>
+                            <div class="vtimeline-desc">Chairman of SAIMechE Central Branch / CEO of SAIMechE</div>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">09:00<br><span>09:30</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Keynote Speaker 1</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">09:35<br><span>10:50</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Parallel Sessions 1</h4>
+                            <div class="vtimeline-sessions">
+                                <span><b>Session 1a:</b> 5 presentations</span>
+                                <span><b>Session 1b:</b> 5 presentations</span>
+                                <span><b>Session 1c:</b> 5 presentations</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">10:50<br><span>11:05</span></div>
+                        <div class="vtimeline-content">
+                            <h4 style="color: #1e88e5;">Tea break</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">11:05<br><span>12:35</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Parallel Sessions 2</h4>
+                            <div class="vtimeline-sessions">
+                                <span><b>Session 2a:</b> 6 presentations</span>
+                                <span><b>Session 2b:</b> 6 presentations</span>
+                                <span><b>Session 2c:</b> 6 presentations</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="vtimeline-col">
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">12:35<br><span>13:35</span></div>
+                        <div class="vtimeline-content">
+                            <h4 style="color: #1e88e5;">Lunch break</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">13:35<br><span>15:05</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Parallel Sessions 3</h4>
+                            <div class="vtimeline-sessions">
+                                <span><b>Session 3a:</b> 6 presentations</span>
+                                <span><b>Session 3b:</b> 6 presentations</span>
+                                <span><b>Session 3c:</b> 6 presentations</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">15:05<br><span>15:20</span></div>
+                        <div class="vtimeline-content">
+                            <h4 style="color: #1e88e5;">Tea break</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">15:20<br><span>16:05</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Parallel Sessions 4</h4>
+                            <div class="vtimeline-sessions">
+                                <span><b>Session 4a:</b> 3 presentations</span>
+                                <span><b>Session 4b:</b> 3 presentations</span>
+                                <span><b>Session 4c:</b> 3 presentations</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">16:05<br><span>16:35</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Keynote Speaker 2</h4>
+                        </div>
+                    </div>
+                    <div class="vtimeline-item">
+                        <div class="vtimeline-dot"></div>
+                        <div class="vtimeline-date">16:35<br><span>16:45</span></div>
+                        <div class="vtimeline-content">
+                            <h4>Closing remarks</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
     <!-- =========================
        SUBMISSION  SECTION   
     ============================== -->
